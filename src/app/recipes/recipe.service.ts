@@ -1,13 +1,41 @@
 import { EventEmitter } from '@angular/core';
 
 import { Recipe } from './recipe.model';
+import { Ingredient } from '../shared/ingredient.model';
 
 export class RecipeService {
   recipeSelected = new EventEmitter<Recipe>();
 
   private recipes: Recipe[] = [
-    new Recipe("A Test Recipe", "This is a test recipe", "http://www.seriouseats.com/images/2012/07/20120730216565-chilaquiles-pumpkin-seed-salsa-verde-1.jpeg"),
-    new Recipe("Another Test Recipe", "This is another test recipe", "http://www.seriouseats.com/images/2017/03/20170324-vegan-snack-recipes-roundup-13.jpg"),
+    new Recipe(
+      "Fully Loaded Vegan Queso Dip Recipe.",
+      "The ultimate party snack, 100% animal product-free form.", "http://www.seriouseats.com/recipes/assets_c/2015/02/20150228-vegan-loaded-queso-dip7-thumb-1500xauto-419943.jpg",
+      [
+        new Ingredient('tablespoon of vegetable oil', 1),
+        new Ingredient('pound of vegan chorizo', 3/4),
+        new Ingredient('Recipe of Vegan Nacho Cheese Sauce', 1),
+        new Ingredient('Can of Black beans, drained and rinsed', 1),
+        new Ingredient('Cans of Ro*Tel Diced Tomatoes with Green Chilies, drained', 2),
+        new Ingredient('Tablespoons of Chopped fresh cilantro leaves, plus more for garnish', 3),
+        new Ingredient('Scallions, thinly sliced, plus more for garnish', 4),
+        new Ingredient('Avocado, finely diced', 1),
+        new Ingredient('Serrano or jalapeño pepper, minced', 1),
+        new Ingredient('Hot sauce', 1),
+        new Ingredient('Bag tortilla chips', 1),
+
+
+      ],),
+    new Recipe(
+      "Breakfast Garlic Toast.",
+      "Garlicky whole-grain toast.", "http://www.seriouseats.com/recipes/assets_c/2012/01/20120115-vegan-experience-day-1-5-thumb-625xauto-211728.jpg",
+      [
+        new Ingredient('Tablespoons of extra-virgin olive oil', 4),
+        new Ingredient('Small cloves garlic, grated on a microplane grater', 8),
+        new Ingredient('Tablespoons of finely minced fresh parsley leaves', 2),
+        new Ingredient('Pinch of red pepper flakes', 1),
+        new Ingredient('Tablespoon of kosher salt', 1),
+        new Ingredient('Slices of whole grain sandwich bread', 8),
+      ],),
   ];
 
   getRecipes() {
