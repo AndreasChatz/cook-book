@@ -24,5 +24,4 @@ export class ShoppingEditComponent implements OnInit {
     const newIngredient = new Ingredient(ingName, ingAmaount);
     this.slService.addIngredient(newIngredient);
   }
-
 }
