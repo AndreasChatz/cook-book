@@ -13,11 +13,19 @@ import { ShoppingListService } from '../shopping-list.service';
 })
 export class ShoppingEditComponent implements OnInit, OnDestroy {
   subscription: Subscription;
+  editMode = false;
+  editedItemIndex: number;
+
   constructor(private slService: ShoppingListService) { }
 
   ngOnInit() {
     this.subscription = this.slService.startedEditing
-      .subscribe();
+      .subscribe(
+        (index: number) => {
+          this.editMode = true;
+          this.editedItemIndex = index;
+        }
+      );
   }
 
   ngOnDestroy() {
