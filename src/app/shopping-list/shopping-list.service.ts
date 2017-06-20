@@ -32,4 +32,9 @@ export class ShoppingListService {
     this.ingredients.push(...ingredients); //spread operator
     this.ingredientChanged.next([...this.ingredients]); // oti kanei kai i this.ingredients.splice();
   }
+
+  updateIngredient(index: number, newIngredient: Ingredient) {
+    this.ingredients[index] = newIngredient;
+    this.ingredientChanged.next(this.ingredients.slice());
+  }
 }
