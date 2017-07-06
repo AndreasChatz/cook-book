@@ -15,7 +15,7 @@ export class RecipeService {
       "The ultimate party snack, 100% animal product-free form.", "http://www.seriouseats.com/recipes/assets_c/2015/02/20150228-vegan-loaded-queso-dip7-thumb-1500xauto-419943.jpg",
       [
         new Ingredient('tablespoon of vegetable oil', 1),
-        new Ingredient('pound of vegan chorizo', 3/4),
+        new Ingredient('pound of vegan chorizo', 1),
         new Ingredient('Recipe of Vegan Nacho Cheese Sauce', 1),
         new Ingredient('Can of Black beans, drained and rinsed', 1),
         new Ingredient('Cans of Ro*Tel Diced Tomatoes with Green Chilies, drained', 2),
