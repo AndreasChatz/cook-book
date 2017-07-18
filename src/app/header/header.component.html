@@ -14,10 +14,29 @@
           <ul class="dropdown-menu">
             <li>
               <a style="cursor: pointer;"
-                (click)="onSaveData()">
-                Save Data
-              </a></li>
-            <li><a style="cursor: pointer;">Fetch Date</a></li>
+                (click)="onSaveRecipes()">
+                Save Recipes
+              </a>
+            </li>
+            <li>
+              <a style="cursor: pointer;"
+                (click)="onFetchRecipes()">
+                Fetch Recipes
+              </a>
+            </li>
+            <hr>
+            <li>
+              <a style="cursor: pointer;"
+                (click)="onSaveIngredient()">
+                Save Ingredients
+              </a>
+            </li>
+            <li>
+              <a style="cursor: pointer;"
+                (click)="onFetchIngredient()">
+                Fetch Ingredients
+              </a>
+            </li>
           </ul>
         </li>
       </ul>
