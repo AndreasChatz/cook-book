@@ -3,14 +3,17 @@ import { Http, Response } from '@angular/http';
 
 import 'rxjs/add/operator/map';
 
-import { RecipeService } from '../recipes/recipe.service';
-import { Recipe } from '../recipes/recipe.model';
+import { RecipeService }        from '../recipes/recipe.service';
+import { ShoppingListService }  from '../shopping-list/shopping-list.service';
+import { Recipe }               from '../recipes/recipe.model';
+import { Ingredient }          from './ingredient.model';
 
 @Injectable()
 export class DataStorageService {
   constructor(
     private http: Http,
-    private recipeService: RecipeService) {}
+    private recipeService: RecipeService,
+    private shoppingListService: ShoppingListService) {}
 
   storeRecipes() {
     return this.http.put(
@@ -53,4 +56,23 @@ export class DataStorageService {
   //       }
   //     );
   // }
+
+  storeShoppingList() {
+    return this.http.put(
+      'https://cook-book-ed64b.firebaseio.com/shopping-list.json',
+      this.shoppingListService.getIngredients()
+    );
+  }
+
+  getShoppingList() {
+    this.http.get('https://cook-book-ed64b.firebaseio.com/shopping-list.json')
+      .map(
+        (response: Response) => response.json()
+      )
+      .subscribe(
+        (response: Ingredient []) => {
+          return this.shoppingListService.addIngredients(response);
+        }
+      )
+  }
 }

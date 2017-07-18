@@ -19,4 +19,13 @@ export class HeaderComponent {
   onFetchRecipes() {
     this.dataStorageService.getRecipes();
   }
+
+  onSaveShoppingList() {
+    this.dataStorageService.storeShoppingList()
+      .subscribe();
+  }
+
+  onFetchShoppingList() {
+    this.dataStorageService.getShoppingList();
+  }
 }
