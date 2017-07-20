@@ -36,6 +36,7 @@ export class AuthService {
   logout() {
     firebase.auth().signOut();
     this.token = null;
+    this.router.navigate(['/']);
   }
 
   // zitaei to token alla epidi ginete asigxrona mporei to token
