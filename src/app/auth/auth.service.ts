@@ -34,12 +34,16 @@ export class AuthService {
   // signinUser methodo. Den einai apolita sostos tropos giati mporei na
   // kaleso tis http.put i http.get me token pou na exei liksei
   // giati tha einai auto pou eixa meta tin klisi tis methodou signinUser
-  getToken() {
+  getToken(): string {
     // epistrefei to token asigxrona ( einai Promise )
     firebase.auth().currentUser.getToken()
       .then(
         (token: string) => this.token = token
       );
       return this.token;
+  }
+
+  isAuthenticated(): boolean {
+    return this.token != null;
   }
 }
