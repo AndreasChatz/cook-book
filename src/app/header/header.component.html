@@ -5,42 +5,65 @@
     </div>
     <div class="navbar-default">
       <ul class="nav navbar-nav">
-        <li routerLinkActive="active"><a routerLink="/recipes">Recipes</a></li>
-        <li routerLinkActive="active"><a routerLink="/shopping-list">Shopping List</a></li>
+
+        <li routerLinkActive="active">
+          <a routerLink="/recipes">
+            Recipes</a>
+        </li>
+
+        <li routerLinkActive="active">
+          <a routerLink="/shopping-list">
+            Shopping List</a>
+        </li>
+
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <ng-template [ngIf]="!authService.isAuthenticated()">
-          <li><a routerLink="/signup">Register</a></li>
-          <li><a routerLink="/signin">Login</a></li>
+
+          <li><a routerLink="/signup">
+            Register</a>
+          </li>
+
+          <li><a routerLink="/signin">
+            Login</a>
+          </li>
+
         </ng-template>
+
+        <li *ngIf="authService.isAuthenticated()">
+          <a style="cursor: pointer;" (click)="onLogout()">
+            Logout</a>
+        </li>
+
         <li *ngIf="authService.isAuthenticated()" class="dropdown" appDropdown>
-          <a style="cursor: pointer;" class="dropdown-toggle">Manage <span class="caret"></span></a>
+          <a style="cursor: pointer;" class="dropdown-toggle">
+            Manage <span class="caret"></span>
+          </a>
+
           <ul class="dropdown-menu">
             <li>
-              <a style="cursor: pointer;"
-                (click)="onSaveRecipes()">
-                Save Recipes
-              </a>
+              <a style="cursor: pointer;" (click)="onSaveRecipes()">
+                Save Recipes</a>
             </li>
+
             <li>
-              <a style="cursor: pointer;"
-                (click)="onFetchRecipes()">
-                Fetch Recipes
-              </a>
+              <a style="cursor: pointer;" (click)="onFetchRecipes()">
+                Fetch Recipes</a>
             </li>
-            <hr>
+
+            <hr/>
+
             <li>
-              <a style="cursor: pointer;"
-                (click)="onSaveShoppingList()">
-                Save Shopping List
-              </a>
+              <a style="cursor: pointer;" (click)="onSaveShoppingList()">
+                Save Shopping List </a>
             </li>
+
             <li>
-              <a style="cursor: pointer;"
-                (click)="onFetchShoppingList()">
+              <a style="cursor: pointer;" (click)="onFetchShoppingList()">
                 Fetch Shopping List
               </a>
             </li>
+
           </ul>
         </li>
       </ul>

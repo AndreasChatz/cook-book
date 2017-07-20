@@ -27,6 +27,11 @@ export class AuthService {
       );
   }
 
+  logout() {
+    firebase.auth().signOut();
+    this.token = null;
+  }
+
   // zitaei to token alla epidi ginete asigxrona mporei to token
   // na min exei epistrepsei otan ektelestoun oi http.put kai http.get
   // sto data-storage.service.ts. Se auti tin periptosi epistrefo to token
