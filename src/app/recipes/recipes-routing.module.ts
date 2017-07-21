@@ -15,7 +15,6 @@ const recipesRoutes: Routes = [
     { path: ':id',      component: RecipeDetailComponent, canActivate: [RecipeDoesNotExistGuard] },
     { path: ':id/edit', component: RecipeEditComponent, canActivate: [AuthGuard] },
   ]},
-  { path: '**', redirectTo: '/recipes'},
 ];
 
 @NgModule({
