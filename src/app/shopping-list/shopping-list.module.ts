@@ -1,6 +1,6 @@
-import { NgModule } from '@angular/core';
+import { NgModule }     from '@angular/core';
+import { FormsModule }  from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
 
 import { ShoppingListComponent } from './shopping-list.component';
 import { ShoppingEditComponent } from './shopping-edit/shopping-edit.component';
@@ -12,10 +12,8 @@ import { ShoppingEditComponent } from './shopping-edit/shopping-edit.component';
     ShoppingEditComponent,
   ],
   imports: [
-    CommonModule,
     FormsModule,
-  ]
+    CommonModule,
+  ],
 })
-export class ShoppingListModule {
-
-}
+export class ShoppingListModule {}
