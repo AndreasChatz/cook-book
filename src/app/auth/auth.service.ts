@@ -48,7 +48,7 @@ export class AuthService {
   // giati tha einai auto pou eixa meta tin klisi tis methodou signinUser
   getToken(): string {
     // epistrefei to token asigxrona ( einai Promise )
-    firebase.auth().currentUser.getToken()
+    firebase.auth().currentUser.getIdToken()
       .then(
         (token: string) => this.token = token
       );
