@@ -72,6 +72,10 @@ export class RecipeEditComponent implements OnInit, OnDestroy {
     this.router.navigate(['../'], {relativeTo: this.route});
   }
 
+  getControls() {
+    return (<FormArray>this.recipeForm.get('ingredients')).controls;
+  }
+
   private initForm() {
     let recipeName = '';
     let recipeImagePath = '';
